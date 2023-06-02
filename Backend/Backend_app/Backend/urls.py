@@ -17,7 +17,16 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 
+from Authentification.urls import router as user_registration_router
+
+router = routers.DefaultRouter()
+router.registry.extend(user_registration_router.registry)
+
+app_name = "backend"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("authentification/", include("Authentification.urls")),
 ]
+
+urlpatterns += user_registration_router.urls

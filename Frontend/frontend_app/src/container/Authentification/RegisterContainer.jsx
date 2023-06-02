@@ -1,36 +1,37 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-
 import AuthentificationComponent from "../../component/Authentification/AuthentificationComponent";
 
-const AuthentificationContainer = () => {
-  const initLoginFormValues = {
+const RegisterContainer = () => {
+  const initRegisterFormValue = {
     username: "",
     password: "",
   };
-  const [loginFormValues, setLoginFormValue] = useState(initLoginFormValues);
+
+  const [registerFormValues, setRegisterFormValues] = useState(initRegisterFormValue);
 
   const handleFormValues = (input, field) => {
-    var copy = {...loginFormValues};
+    var copy = {...registerFormValues};
     copy[field] = input;
-    setLoginFormValue(copy)
+    setRegisterFormValues(copy)
   };
 
   const dispatch = useDispatch();
 
-  const submitLogin = (event) => {
+  const submitRegister = (event) => {
     event.preventDefault();
-    dispatch({type: "SUBMIT_LOGIN", loginFormValues})
+    console.log('registerFormValues');
+    dispatch({type: "REGISTER_USER", registerFormValues})
   };
 
   return (
     <AuthentificationComponent
-      submiFunction={submitLogin}
       handleFormValues={handleFormValues}
-      registerButton={true}
+      submiFunction={submitRegister}
+      registerButton={false}
     />
   )
 }
 
-export default AuthentificationContainer;
+export default RegisterContainer;

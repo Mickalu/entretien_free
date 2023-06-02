@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import AuthentificationContainer from "../container/Authentification/AuthentificationContainer";
 import HomeContainer from '../container/HomeContainer';
+import RegisterContainer from '../container/Authentification/RegisterContainer';
 
 const App = ({ tokenAuthentification }) => (
   <Routes>
@@ -13,6 +14,7 @@ const App = ({ tokenAuthentification }) => (
     ) : (
       <>
         <Route path="/" element={<AuthentificationContainer />} />
+        <Route path="/register" element={<RegisterContainer />} />
       </>
     )}
 

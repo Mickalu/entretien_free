@@ -16,3 +16,12 @@ export const getAuthentificationToken = (valueData) => (
   })
   .then(response => response.json())
 );
+
+export const createUser = (valueData) => {
+  fetch("http://127.0.0.1:8000/registration_user/", {
+    method: "POST",
+    headers: defaultHeaders,
+    body: JSON.stringify(valueData),
+  })
+  .then(response => response.json())
+}

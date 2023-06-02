@@ -4,9 +4,9 @@ const initialState = {
   token: "",
 };
 
-const updateTokenValueFunction = (state, action) => (
+const updateTokenValueFunction = (state, action) => {
   state.token = action.payload
-);
+ };
 
 export const tokenAuthentificationSlice = createSlice({
   name: "tokenAuthentification",
