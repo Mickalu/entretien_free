@@ -12,7 +12,6 @@ class UserViewSet(viewsets.ModelViewSet):
         user = self.request.user
 
     def create(self, request):
-        print("request : ",request.data)
         serializer = UserSerializer(data=request.data["registerFormValues"])
 
         if serializer.is_valid():
