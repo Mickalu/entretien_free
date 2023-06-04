@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 import AuthentificationComponent from "../../component/Authentification/AuthentificationComponent";
 
 const RegisterContainer = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const initRegisterFormValue = {
     username: "",
     password: "",
@@ -17,12 +21,11 @@ const RegisterContainer = () => {
     setRegisterFormValues(copy)
   };
 
-  const dispatch = useDispatch();
 
   const submitRegister = (event) => {
     event.preventDefault();
-    console.log('registerFormValues');
-    dispatch({type: "REGISTER_USER", registerFormValues})
+    dispatch({type: "REGISTER_USER", registerFormValues});
+    navigate("/");
   };
 
   return (

@@ -20,13 +20,14 @@ class TicketViewSet(viewsets.ModelViewSet):
         return Response({'tickets': ticket_serializer.data}, status=status.HTTP_200_OK)
 
     def create(self, request):
-        user = Token.objects.get(key=request.META.get('HTTP_TOKEN')).user
-        serializer = TicketSerializer(data=request.data)
+        data = request.data
+        user = Token.objects.get(key=request.data["token"]).user
+
+        serializer = TicketSerializer(data=data)
 
         if serializer.is_valid():
             ticket = serializer.save(user=user)
             return Response({}, status=status.HTTP_201_CREATED)
 
         else:
-            print(serializer.errors)
             return Response({}, status=status.HTTP_400_BAD_REQUEST)

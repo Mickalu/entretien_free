@@ -11,6 +11,8 @@ const AuthentificationComponent = ({ submiFunction, handleFormValues, registerBu
       ) : (<></>)
   );
 
+  const submitButtonName = registerButton ? "Login" : "Save";
+
   return (
     <>
       <form onSubmit={submiFunction}>
@@ -24,7 +26,7 @@ const AuthentificationComponent = ({ submiFunction, handleFormValues, registerBu
           <input type='password' name='password' onChange={(e) => handleFormValues(e.target.value, "password")} />
         </label>
 
-        <button type='submit'>Login</button>
+        <button type='submit'>{submitButtonName}</button>
 
         {displayRegisterButton()}
       </form>
