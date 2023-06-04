@@ -13,8 +13,13 @@ ticket_list = TicketViewSet.as_view({
     'post': 'create'
 })
 
+ticket_update = TicketViewSet.as_view({
+    'post': 'update',
+})
+
 urlpatterns = format_suffix_patterns([
     path('ticket_list', ticket_list, name='ticket'),
+    path('ticket_update', ticket_update, name='ticket_update'),
 ])
 
 #urlpatterns = router.urls

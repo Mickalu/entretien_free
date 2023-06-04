@@ -9,4 +9,6 @@ export default function* rootSaga(){
   yield takeLeading("REGISTER_USER", userRegisterSaga.registerUser)
   yield takeLeading("CREATE_TICKET", ticketSaga.createTicketSaga)
   yield takeLeading("LIST_USER_TICKET", ticketSaga.getUserTicket)
+  yield takeLeading("UPDATE_TICKET", ticketSaga.updateTicketSaga)
+
 };

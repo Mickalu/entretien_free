@@ -5,6 +5,7 @@ import AuthentificationContainer from "../container/Authentification/Authentific
 import HomeContainer from '../container/HomeContainer';
 import RegisterContainer from '../container/Authentification/RegisterContainer';
 import TicketCreationPageContainer from '../container/Ticket/TicketCreationPageContainer';
+import TicketPageContainer from '../container/Ticket/TicketPageContainer';
 
 const App = ({ tokenAuthentification }) => (
   <Routes>
@@ -12,6 +13,7 @@ const App = ({ tokenAuthentification }) => (
       <>
         <Route path="/" element={<HomeContainer />} />
         <Route path="/createTicket" element={<TicketCreationPageContainer />} />
+        <Route path="/ticketPage" element={<TicketPageContainer />} />
       </>
     ) : (
       <>

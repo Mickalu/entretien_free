@@ -21,3 +21,12 @@ export const getUserTicketsApi = (token) => (
   })
   .then(response => response.json())
 );
+
+export const updateTicketApi = (dictVariables) => (
+  fetch("http://127.0.0.1:8000/ticket/ticket_update", {
+    method: "POST",
+    headers: defaultHeaders(dictVariables['token']),
+    body: JSON.stringify(dictVariables['data'])
+  })
+  .then(response => response.json())
+);

@@ -7,4 +7,4 @@ class TicketSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Ticket
-        fields = ('priority', 'zone')
+        fields = ('priority', 'zone', 'id')

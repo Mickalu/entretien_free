@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  tickets: {},
+  tickets: [],
 };
 
 const updateTicketValueFunction = (state, action) => {
-  state.ticket = action.payload
+  state.tickets = action.payload
 };
 
 export const ticketSlice = createSlice({
