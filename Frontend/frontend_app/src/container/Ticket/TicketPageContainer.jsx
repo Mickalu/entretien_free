@@ -11,7 +11,7 @@ const TicketPageContainer = () => {
 
   const tickets = useSelector((state) => state.ticket.tickets);
   const ticketId = location.state.ticketId;
-  const ticketInfo = tickets.filter(ticket => ticket.id == ticketId)[0];
+  const ticketInfo = tickets.filter(ticket => ticket.id === ticketId)[0];
 
   const token = useSelector((state) => state.tokenAuthentification.token);
 

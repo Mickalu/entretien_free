@@ -14,7 +14,7 @@ export function* getUserTicket(formValues) {
 };
 
 export function* createTicketSaga(formValues) {
-    const response = yield call(createTicket, { 'data': formValues['data'], 'token': formValues['data']['token']});
+    yield call(createTicket, { 'data': formValues['data'], 'token': formValues['data']['token']});
     yield call(getUserTicket, formValues['data']['token']);
 };
 

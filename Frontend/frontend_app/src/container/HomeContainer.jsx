@@ -21,11 +21,11 @@ const HomeContainer = () => {
   };
 
   const filterTicket = (ticket) => {
-    if (selectFilterValue == 'ALL') {
+    if (selectFilterValue === 'ALL') {
       return true
     };
 
-    return ticket.zone == selectFilterValue;
+    return ticket.zone === selectFilterValue;
   };
   const listTicketFiltered = tickets_dict.tickets.filter(ticket => filterTicket(ticket));
 
