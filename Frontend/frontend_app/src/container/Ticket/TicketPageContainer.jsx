@@ -43,6 +43,6 @@ const TicketPageContainer = () => {
       handleFormeValues={handleFormeValues}
     />
   )
-}
+};
 
-export default TicketPageContainer
+export default TicketPageContainer;
