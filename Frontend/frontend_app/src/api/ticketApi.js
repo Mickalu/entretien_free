@@ -6,7 +6,7 @@ const defaultHeaders = (token) => ({
 });
 
 export const createTicket = (dictVariables) => (
-  fetch("http://127.0.0.1:8000/ticket/", {
+  fetch("http://0.0.0.0:8000/ticket/", {
     method: "POST",
     headers: defaultHeaders(dictVariables['token']),
     body: JSON.stringify(dictVariables['data'])
@@ -15,7 +15,7 @@ export const createTicket = (dictVariables) => (
 );
 
 export const getUserTicketsApi = (token) => (
-  fetch("http://127.0.0.1:8000/ticket/?token="+token, {
+  fetch("http://0.0.0.0:8000/ticket/?token="+token, {
     method: "GET",
     headers: defaultHeaders(token),
   })
@@ -23,7 +23,7 @@ export const getUserTicketsApi = (token) => (
 );
 
 export const updateTicketApi = (dictVariables) => (
-  fetch("http://127.0.0.1:8000/ticket/ticket_update", {
+  fetch("http://0.0.0.0:8000/ticket/ticket_update", {
     method: "POST",
     headers: defaultHeaders(dictVariables['token']),
     body: JSON.stringify(dictVariables['data'])

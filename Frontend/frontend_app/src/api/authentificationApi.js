@@ -9,7 +9,7 @@ const defaultHeaders = {
 };
 
 export const getAuthentificationToken = (valueData) => (
-  fetch("http://127.0.0.1:8000/authentification/api-token-auth/", {
+  fetch("http://0.0.0.0:8000/authentification/api-token-auth/", {
     method: "POST",
     headers: defaultHeaders,
     body: JSON.stringify(valueData),
@@ -18,7 +18,7 @@ export const getAuthentificationToken = (valueData) => (
 );
 
 export const createUser = (valueData) => {
-  fetch("http://127.0.0.1:8000/registration_user/", {
+  fetch("http://0.0.0.0:8000/registration_user/", {
     method: "POST",
     headers: defaultHeaders,
     body: JSON.stringify(valueData),

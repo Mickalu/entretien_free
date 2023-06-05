@@ -19,6 +19,6 @@ export function* createTicketSaga(formValues) {
 };
 
 export function* updateTicketSaga(formValues) {
-  const response = yield call(updateTicketApi, {'data': formValues['data'], 'token': formValues['data']['token']})
+  yield call(updateTicketApi, {'data': formValues['data'], 'token': formValues['data']['token']})
   yield call(getUserTicket, formValues['data']['token']);
 }
