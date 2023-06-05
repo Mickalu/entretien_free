@@ -6,7 +6,7 @@ const AuthentificationComponent = ({ submiFunction, handleFormValues, registerBu
     (registerButton) ?
       (
       <Link to="/register">
-        <button>Register</button>
+        <button>Sign up</button>
       </Link>
       ) : (<></>)
   );
